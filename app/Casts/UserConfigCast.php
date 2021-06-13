@@ -16,9 +16,12 @@ class UserConfigCast implements CastsAttributes
     /** {@inheritDoc} */
     public function set($model, string $key, $value, array $attributes)
     {
-        // todo: validation logic
-
-        // todo: UserConfig toJson returns json key values pairs
-        return $value->toJson();
+        if (empty($value)) {
+            return null;
+        } elseif (is_array($value)) {
+            return json_encode($value);
+        } elseif ($value instanceof UserConfigValue) {
+            return $value->toJson();
+        }
     }
 }

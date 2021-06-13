@@ -1,5 +1,7 @@
 <?php
 
+use App\Enums\TimeCutting;
+
 return [
     'settings' => [
         'declare_for_others' => [
@@ -29,8 +31,8 @@ return [
         'time_cutting' => [
             'description' => 'Unité de temps utilisée pour les déclarations de l‘utilisateur.',
             'name' => 'Collège de l‘utilisateur',
-            'default' => 'minute',
-            'values' => ['minute', 'heure', 'demie-journée', 'journée'],
+            'default' => TimeCutting::MINUTE,
+            'values' => TimeCutting::getValues(),
         ],
     ]
 ];

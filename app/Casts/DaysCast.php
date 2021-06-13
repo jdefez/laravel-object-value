@@ -10,7 +10,7 @@ class DaysCast implements CastsAttributes
     /** {@inheritDoc} */
     public function get($model, string $key, $value, array $attributes)
     {
-        return new \App\Values\DaysValue($value);
+        return new DaysValue($value);
     }
 
     /** {@inheritDoc} */

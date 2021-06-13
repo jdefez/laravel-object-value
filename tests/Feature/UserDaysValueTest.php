@@ -8,7 +8,7 @@ use App\Values\DaysValue;
 use App\Models\User;
 use Tests\TestCase;
 
-class UserDaysObjectValueTest extends TestCase
+class UserDaysValueTest extends TestCase
 {
     use RefreshDatabase;
     use WithFaker;
