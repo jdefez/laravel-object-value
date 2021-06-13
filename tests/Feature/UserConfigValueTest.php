@@ -55,9 +55,9 @@ class UserConfigValueTest extends TestCase
     {
         $user = User::factory()->create();
 
-        $settings = collect(config('user.settings'));
-        foreach ($settings as $key => $value) {
-            $this->assertTrue($user->config->is($key, $value['default']));
-        }
+        collect(config('user.settings'))
+            ->each(function ($value, $key) use ($user) {
+                $this->assertTrue($user->config->is($key, $value['default']));
+            });
     }
 }
